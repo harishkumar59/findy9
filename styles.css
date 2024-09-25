@@ -1,0 +1,354 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navigation styles */
+.nav {
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(135, 206, 235, 0.8); /* Transparency set to 80% */
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2); /* Added box-shadow for a glassy look */
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 2rem;
+    margin-right: 0.5rem;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Add padding to body to prevent content from being hidden under fixed navbar */
+body {
+    padding-top: 4rem; /* Adjust this value based on your navbar height */
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    background-color: #5F9EA0;
+    padding: 1rem;
+}
+
+.mobile-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+/* Main content styles */
+main {
+    flex-grow: 1;
+    padding: 2rem 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+/* Search input styles */
+.search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+/* Grid layout for cards */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Card styles */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+}
+
+.card-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    border-radius: 4px;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+/* Pricing indicator styles */
+.pricing-indicator {
+    position: absolute;
+    top: 0;
+    right:0;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.free { background-color: #4CAF50; }
+.freemium { background-color: #2196F3; }
+.paid { background-color: #FFC107; }
+.trial { background-color: #9C27B0; }
+
+.card p {
+    color: #666;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.hashtag {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+/* Visit Website button styles */
+.card a {
+    /*display: inline-block;*/
+    background-color: #87CEEB;
+    color: white;
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+    background-color: #5F9EA0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #87CEEB;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    z-index: 2; 
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+    .menu-button {
+        display: none;
+    }
+}
+
+
+/* Vertical Navigation Bar Styles */
+.vertical-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 70%;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /* overflow-y: auto; */
+    /* margin-top: 100px; */
+    /* margin-bottom: 100px; */
+    transition: transform 0.3s ease-in-out;
+    scrollbar-width: thin; /* Add this line to make the scrollbar thin */
+}
+
+.vertical-nav h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #333;
+    margin-top: 100px;
+    margin-left: 10px;
+}
+
+.vertical-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 39px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vertical-nav ul li {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.vertical-nav ul li a {
+    text-decoration: none;
+    color: #757575;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.vertical-nav ul li a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.vertical-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Adjust main content to account for vertical nav */
+main.container {
+    margin-left: 300px; /* Adjust this value based on the width of the vertical nav */
+    z-index: 1; /* Ensure main content is above the vertical nav */
+}
+
+/* Responsive styles for vertical nav */
+@media (max-width: 768px) {
+    .vertical-nav {
+        transform: translateX(-100%);
+        z-index: 1001;
+    }
+
+    .vertical-nav.active {
+        transform: translateX(0);
+    }
+
+    main.container {
+        margin-left: 0;
+    }
+
+    /* Add a toggle button for the vertical nav */
+    .vertical-nav-toggle {
+        display: block;
+        position: fixed;
+        left: 10px;
+        top: 60px;
+        z-index: 1002;
+        background-color: #87CEEB;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
